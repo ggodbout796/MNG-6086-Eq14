@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence X — Formation en communication pour RSS</title>
+
+<!--
+============================================================
+COMMENT MODIFIER CE SITE
+============================================================
+1. NOM DE L'AGENCE :
+   Recherche dans le fichier : Agence X
+   Remplacement : [votre nouveau nom]
+   (Ctrl+H ou Cmd+H dans la plupart des éditeurs)
+
+2. TEXTE :
+   Modifiez directement entre les balises HTML.
+   Les sections sont délimitées par des commentaires majuscules.
+
+3. COULEURS :
+   Modifiez la palette dans le tailwind.config (ligne ~50).
+
+4. OUVRIR LE SITE :
+   Double-clic sur le fichier → s'ouvre dans le navigateur.
+   Pour Teams : ouvrir dans Chrome, F11 plein écran, partager l'écran.
+
+5. NAVIGUER :
+   Le site est en page unique avec ancres. Clic sur le menu = scroll.
+============================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'safety': '#ea580c',
+          'safety-dark': '#c2410c',
+          'warning': '#facc15',
+          'alert': '#dc2626',
+          'charcoal': '#1a1a1a',
+          'cream': '#fafafa',
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  /* Animation au scroll : élément invisible jusqu'à ce qu'il entre dans le viewport, puis fade in */
+  .js .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .8s, transform .8s; }
+  .js .fade-in.visible { opacity: 1; transform: translateY(0); }
+  /* Si pas de JS (ou impression/PDF) : tout est visible par défaut */
+  @media print {
+    .fade-in, .js .fade-in { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+
+<body class="bg-cream text-charcoal antialiased">
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="fixed top-0 left-0 right-0 bg-charcoal/95 backdrop-blur z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#hero" class="text-white font-bold text-xl tracking-tight">
+      <span class="text-safety">●</span> Agence X
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm text-white/80">
+      <li><a href="#probleme" class="hover:text-safety transition">Le problème</a></li>
+      <li><a href="#agence" class="hover:text-safety transition">L'agence</a></li>
+      <li><a href="#formation" class="hover:text-safety transition">La formation</a></li>
+      <li><a href="#tarifs" class="hover:text-safety transition">Tarifs</a></li>
+      <li><a href="#contact" class="bg-safety text-white px-4 py-2 rounded-md hover:bg-safety-dark transition font-medium">Réserver</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="min-h-screen bg-charcoal text-white flex items-center pt-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-safety rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-warning rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 py-20 relative">
+    <div class="max-w-4xl fade-in">
+      <span class="inline-block px-4 py-1 bg-safety/20 border border-safety/30 text-safety rounded-full text-sm font-medium mb-6">
+        Formation en communication pour Représentants en Santé et Sécurité
+      </span>
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.05] mb-8">
+        Au Québec,<br>
+        <span class="text-safety">un travailleur de la construction</span><br>
+        meurt tous les 5 jours.
+      </h1>
+      <p class="text-xl text-white/70 mb-10 max-w-2xl leading-relaxed">
+        Les règles existent. Le savoir existe. Mais sur le chantier, <strong class="text-white">les consignes ne sont pas comprises ni acceptées</strong>. Agence X forme les RSS à transformer la règle en comportement adopté.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#formation" class="bg-safety hover:bg-safety-dark text-white px-8 py-4 rounded-md font-semibold transition shadow-lg shadow-safety/30">Découvrir la formation</a>
+        <a href="#contact" class="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-md font-semibold transition">Réserver une rencontre</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LE PROBLÈME (STATS) ============ -->
+<section id="probleme" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Le constat</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Un problème humain, pas réglementaire</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        Les accidents ne surviennent pas parce que les règles n'existent pas. Ils surviennent parce qu'elles ne sont ni comprises, ni transmises, ni acceptées.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-8 rounded-2xl border-l-4 border-alert shadow-sm fade-in">
+        <div class="text-6xl font-extrabold text-alert mb-3">68</div>
+        <h3 class="font-bold text-xl mb-3">décès en 2023</h3>
+        <p class="text-charcoal/70 leading-relaxed">Travailleurs de la construction morts au Québec en une seule année. Chacun avait une famille, des enfants. Un décès tous les 5 à 6 jours.</p>
+        <p class="text-xs text-charcoal/40 mt-4">CNESST, 2024</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border-l-4 border-safety shadow-sm fade-in">
+        <div class="text-6xl font-extrabold text-safety mb-3">70-80 %</div>
+        <h3 class="font-bold text-xl mb-3">attribuables à l'erreur humaine</h3>
+        <p class="text-charcoal/70 leading-relaxed">Des accidents majeurs dans la construction proviennent d'erreurs de jugement, du non-respect de consignes mal transmises et d'une gestion déficiente.</p>
+        <p class="text-xs text-charcoal/40 mt-4">Huang et al., 2025, <em>Scientific Reports</em></p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border-l-4 border-warning shadow-sm fade-in">
+        <div class="text-5xl font-extrabold text-charcoal mb-3">Maintenant</div>
+        <h3 class="font-bold text-xl mb-3">le coroner enquête</h3>
+        <p class="text-charcoal/70 leading-relaxed">Une enquête publique du Bureau du coroner est en cours sur plusieurs décès récents. Preuve que les lacunes de prévention restent majeures.</p>
+        <p class="text-xs text-charcoal/40 mt-4">Radio-Canada, 2025</p>
+      </div>
+    </div>
+
+    <div class="mt-16 p-10 bg-charcoal text-white rounded-2xl max-w-4xl mx-auto text-center fade-in">
+      <p class="text-2xl md:text-3xl font-bold leading-relaxed">« Une règle bien communiquée est une règle <span class="text-safety">respectée</span>. »</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUI SOMMES-NOUS ============ -->
+<section id="agence" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Notre agence</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Qui sommes-nous ?</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        <strong>Agence X</strong> est une agence québécoise de formation spécialisée dans le développement des habiletés de communication pour les Représentants en Santé et Sécurité (RSS) sur les chantiers de construction du Québec.
+      </p>
+      <p class="text-lg text-charcoal/70 leading-relaxed mt-4">
+        Parce qu'un chantier sécuritaire commence par une conversation efficace. <strong>Chez Agence X, la sécurité passe par la parole.</strong>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="w-12 h-12 bg-safety/10 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-safety text-2xl">◆</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">Mission</h3>
+        <p class="text-charcoal/70 leading-relaxed">Transformer la communication sur les chantiers de construction du Québec pour favoriser une culture de prévention, de confiance et de respect entre tous les travailleurs.</p>
+      </div>
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="w-12 h-12 bg-safety/10 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-safety text-2xl">★</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">Vision</h3>
+        <p class="text-charcoal/70 leading-relaxed">Des chantiers de construction du Québec où chaque travailleur rentre chez lui sain et sauf.</p>
+      </div>
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="w-12 h-12 bg-safety/10 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-safety text-xl font-bold">●●●●</span>
+        </div>
+        <h3 class="font-bold text-xl mb-3">Valeurs</h3>
+        <ul class="space-y-2 text-charcoal/70 text-sm">
+          <li><strong>Influence positive</strong> — sans intimidation</li>
+          <li><strong>Apprentissage continu</strong> — concret et appliqué</li>
+          <li><strong>Respect</strong> — humain et inclusif</li>
+          <li><strong>Collaboration</strong> — la prévention est collective</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA FORMATION ============ -->
+<section id="formation" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">La formation</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">3 blocs. 3 semaines. Un nouveau RSS.</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        Programme intensif de <strong>3 journées de 7h30</strong> réparties sur 3 semaines. Chaque bloc s'ancre dans le cycle d'apprentissage expérientiel : expérience concrète → réflexion → théorie → pratique.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <div class="bg-white p-8 rounded-2xl border-t-4 border-warning shadow-sm fade-in">
+        <span class="text-warning font-bold text-xs uppercase tracking-wider">Bloc 1 — Semaine 1</span>
+        <h3 class="font-bold text-2xl mt-3 mb-3">Se connaître pour mieux interagir</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-4">Reconnaître ses propres émotions et réactions en situation de tension, pour interagir avec discernement plutôt qu'impulsivement.</p>
+        <div class="border-t border-charcoal/10 pt-4 text-sm">
+          <p class="font-semibold mb-1 text-charcoal/80">Contenu :</p>
+          <ul class="text-charcoal/60 space-y-1">
+            <li>• Intelligence émotionnelle (Goleman)</li>
+            <li>• Fenêtre de Johari</li>
+            <li>• Mises en situation chantier</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border-t-4 border-safety shadow-sm fade-in">
+        <span class="text-safety font-bold text-xs uppercase tracking-wider">Bloc 2 — Semaine 2</span>
+        <h3 class="font-bold text-2xl mt-3 mb-3">Communiquer avec impact</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-4">Utiliser des outils concrets pour transmettre les consignes SST de façon claire, adaptée et acceptée par toutes les parties prenantes.</p>
+        <div class="border-t border-charcoal/10 pt-4 text-sm">
+          <p class="font-semibold mb-1 text-charcoal/80">Contenu :</p>
+          <ul class="text-charcoal/60 space-y-1">
+            <li>• Écoute active</li>
+            <li>• Questions facilitantes</li>
+            <li>• Adapter son style de communication</li>
+            <li>• Feedback constructif</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl border-t-4 border-alert shadow-sm fade-in">
+        <span class="text-alert font-bold text-xs uppercase tracking-wider">Bloc 3 — Semaine 3</span>
+        <h3 class="font-bold text-2xl mt-3 mb-3">Gérer la résistance et les conflits</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-4">Choisir la bonne stratégie de gestion de conflit selon la situation et appliquer la communication non violente pour transformer l'opposition en alliance.</p>
+        <div class="border-t border-charcoal/10 pt-4 text-sm">
+          <p class="font-semibold mb-1 text-charcoal/80">Contenu :</p>
+          <ul class="text-charcoal/60 space-y-1">
+            <li>• 5 stratégies de gestion des conflits</li>
+            <li>• Communication non violente (CNV)</li>
+            <li>• Théâtre-forum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-4 text-center">
+      <div class="bg-white p-6 rounded-xl"><p class="text-3xl font-bold text-safety mb-1">80/20</p><p class="text-sm text-charcoal/70">Pratique / théorie</p></div>
+      <div class="bg-white p-6 rounded-xl"><p class="text-3xl font-bold text-safety mb-1">8-12</p><p class="text-sm text-charcoal/70">Participants par groupe</p></div>
+      <div class="bg-white p-6 rounded-xl"><p class="text-3xl font-bold text-safety mb-1">22h30</p><p class="text-sm text-charcoal/70">Total de formation</p></div>
+      <div class="bg-white p-6 rounded-xl"><p class="text-3xl font-bold text-safety mb-1">3 sem.</p><p class="text-sm text-charcoal/70">Pour ancrer les acquis</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROCHE PÉDAGOGIQUE ============ -->
+<section id="approche" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Notre approche pédagogique</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Une pédagogie d'adultes, pour des adultes</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        Notre approche s'appuie sur les principes de l'<strong>andragogie</strong> tels que théorisés par Malcolm Knowles (1980, 2005) et sur le <strong>cycle d'apprentissage expérientiel</strong> de Kolb (1984). Le RSS est un travailleur chevronné — son expérience est notre matière première.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-cream p-6 rounded-xl fade-in">
+        <h3 class="font-bold text-lg mb-2">Apprentissage par l'expérience</h3>
+        <p class="text-charcoal/70 text-sm">Cycle dynamique : expérience concrète → observation réflexive → conceptualisation → expérimentation active (Kolb, 1984).</p>
+      </div>
+      <div class="bg-cream p-6 rounded-xl fade-in">
+        <h3 class="font-bold text-lg mb-2">Pertinence immédiate</h3>
+        <p class="text-charcoal/70 text-sm">Chaque outil enseigné est applicable dès le lendemain sur le chantier. Pas de théorie pour la théorie.</p>
+      </div>
+      <div class="bg-cream p-6 rounded-xl fade-in">
+        <h3 class="font-bold text-lg mb-2">Orientation problème</h3>
+        <p class="text-charcoal/70 text-sm">On part de défis concrets : faire accepter le port du casque à un contremaître sous pression, par exemple.</p>
+      </div>
+      <div class="bg-cream p-6 rounded-xl fade-in">
+        <h3 class="font-bold text-lg mb-2">Autonomie et participation</h3>
+        <p class="text-charcoal/70 text-sm">Le formateur est facilitateur, pas enseignant autoritaire. Les RSS apprennent les uns des autres.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 p-8 bg-charcoal text-white rounded-2xl fade-in">
+      <h3 class="font-bold text-xl mb-6">Nos modalités pédagogiques concrètes</h3>
+      <div class="grid md:grid-cols-2 gap-3 text-white/80 text-sm">
+        <div>• Apprentissage par les pairs (partage de vécus entre RSS)</div>
+        <div>• Mises en situation filmées et débriefées</div>
+        <div>• Théâtre-forum (rejouer un conflit, tester des stratégies)</div>
+        <div>• Analyse de « communications ratées » (cas réels anonymisés)</div>
+        <div>• Simulations sous pression (bruit, temps limité, interruptions)</div>
+        <div>• Portail de transfert (ressources en ligne entre séances)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMATEURS ============ -->
+<section id="formateurs" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Nos formateurs</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Un duo, deux mondes</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        Pour qu'un travailleur de chantier respecte un formateur, il doit le sentir crédible. Nos formations sont <strong>co-animées par un duo complémentaire</strong> : la maîtrise du contenu rencontre la crédibilité du terrain.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-8 rounded-2xl shadow-sm fade-in">
+        <div class="w-20 h-20 bg-safety/10 rounded-full flex items-center justify-center mb-4">
+          <span class="text-2xl font-bold text-safety">KB</span>
+        </div>
+        <h3 class="font-bold text-xl mb-1">Karine Bélanger</h3>
+        <p class="text-safety font-medium text-xs uppercase tracking-wider mb-3">Experte en communication & coaching</p>
+        <p class="text-charcoal/70 leading-relaxed">15 ans d'expérience en formation interpersonnelle en milieu industriel. Spécialiste de la communication non violente et du coaching managérial. Garante du contenu et des habiletés enseignées.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-sm fade-in">
+        <div class="w-20 h-20 bg-safety/10 rounded-full flex items-center justify-center mb-4">
+          <span class="text-2xl font-bold text-safety">CD</span>
+        </div>
+        <h3 class="font-bold text-xl mb-1">Christophe Dion</h3>
+        <p class="text-safety font-medium text-xs uppercase tracking-wider mb-3">Praticien SST chevronné</p>
+        <p class="text-charcoal/70 leading-relaxed">20 ans sur les chantiers majeurs du Québec. Ex-RSS, ex-conseiller CNESST. Apporte le vécu terrain, les cas authentiques et la légitimité aux yeux de travailleurs qui ne supportent pas les théoriciens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÉVALUATION ============ -->
+<section id="evaluation" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Évaluation des participants</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Trois temps, trois mesures</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        La progression du RSS est mesurée tout au long du parcours, et non uniquement à la fin. C'est la condition pour évaluer le vrai transfert sur le chantier.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="text-safety text-xs font-semibold uppercase tracking-wider mb-2">Phase 1</div>
+        <h3 class="font-bold text-xl mb-3">Diagnostique</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-3">Au démarrage, le participant situe ses lacunes.</p>
+        <ul class="text-sm text-charcoal/60 space-y-1"><li>• Autoévaluation initiale</li></ul>
+      </div>
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="text-safety text-xs font-semibold uppercase tracking-wider mb-2">Phase 2</div>
+        <h3 class="font-bold text-xl mb-3">Formative</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-3">Pendant le parcours, on ajuste en continu.</p>
+        <ul class="text-sm text-charcoal/60 space-y-1">
+          <li>• Quiz et résolution en équipe</li>
+          <li>• Observation en mises en situation</li>
+          <li>• Feedback du formateur</li>
+        </ul>
+      </div>
+      <div class="bg-cream p-8 rounded-2xl fade-in">
+        <div class="text-safety text-xs font-semibold uppercase tracking-wider mb-2">Phase 3</div>
+        <h3 class="font-bold text-xl mb-3">Sommative</h3>
+        <p class="text-charcoal/70 leading-relaxed mb-3">À la fin, on certifie les acquis.</p>
+        <ul class="text-sm text-charcoal/60 space-y-1">
+          <li>• Simulation avec grille critériée</li>
+          <li>• Examen écrit (évaluation notionnelle)</li>
+          <li>• Plan d'action + post-mortem</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TÉMOIGNAGES ============ -->
+<section id="temoignages" class="py-24 bg-charcoal text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Témoignages</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Ce qu'en disent ceux qui l'ont vécu</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white/5 p-8 rounded-2xl border border-white/10 fade-in">
+        <div class="text-safety text-4xl mb-4 leading-none">"</div>
+        <p class="text-white/90 leading-relaxed mb-6">Avant, je passais mon temps à crier sur le chantier. Aujourd'hui, j'ai des conversations. Les gars m'écoutent vraiment — pas parce qu'ils ont peur, mais parce qu'ils comprennent.</p>
+        <div class="text-sm text-white/60">
+          <p class="font-semibold text-white">Marie-Claude Tremblay</p>
+          <p>Directrice SST, Construction Pomerleau</p>
+        </div>
+      </div>
+      <div class="bg-white/5 p-8 rounded-2xl border border-white/10 fade-in">
+        <div class="text-safety text-4xl mb-4 leading-none">"</div>
+        <p class="text-white/90 leading-relaxed mb-6">La meilleure formation que j'ai suivie en 25 ans. Ce n'est pas un cours, c'est un changement de posture. Mes interventions sont mieux acceptées, mes journées moins épuisantes.</p>
+        <div class="text-sm text-white/60">
+          <p class="font-semibold text-white">Pierre Lavoie</p>
+          <p>Surintendant, EBC Inc.</p>
+        </div>
+      </div>
+      <div class="bg-white/5 p-8 rounded-2xl border border-white/10 fade-in">
+        <div class="text-safety text-4xl mb-4 leading-none">"</div>
+        <p class="text-white/90 leading-relaxed mb-6">On a observé une baisse marquée des incidents et des plaintes sur nos trois chantiers majeurs depuis qu'on forme nos RSS chez Agence X. Le retour sur investissement est tangible.</p>
+        <div class="text-sm text-white/60">
+          <p class="font-semibold text-white">Jean-François Gauthier</p>
+          <p>Directeur SST, Construction Demathieu Bard</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFS ============ -->
+<section id="tarifs" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 fade-in">
+      <span class="text-safety font-semibold uppercase tracking-wider text-sm">Investissement</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Trois formules, un seul objectif</h2>
+      <p class="text-lg text-charcoal/70 leading-relaxed">
+        Un accident grave coûte en moyenne plusieurs centaines de milliers de dollars à une entreprise. Une formation coûte une fraction. <strong>Le calcul est simple.</strong>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-8 rounded-2xl shadow-sm fade-in">
+        <h3 class="font-bold text-xl mb-1">Individuel</h3>
+        <p class="text-charcoal/60 text-sm mb-6">Cohorte interentreprises (8-12 participants)</p>
+        <div class="text-4xl font-extrabold text-charcoal mb-1">1 495 $</div>
+        <p class="text-charcoal/60 text-sm mb-6">par participant</p>
+        <ul class="space-y-2 text-sm text-charcoal/70 mb-8">
+          <li>✓ 3 blocs de 7h30 sur 3 semaines</li>
+          <li>✓ Matériel pédagogique</li>
+          <li>✓ Portail en ligne 6 mois</li>
+          <li>✓ Attestation de réussite</li>
+        </ul>
+      </div>
+      <div class="bg-charcoal text-white p-8 rounded-2xl shadow-xl relative fade-in">
+        <span class="absolute -top-3 right-6 bg-safety text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recommandé</span>
+        <h3 class="font-bold text-xl mb-1">Forfait entreprise</h3>
+        <p class="text-white/60 text-sm mb-6">8 à 12 participants d'une même organisation</p>
+        <div class="text-4xl font-extrabold mb-1">Sur mesure</div>
+        <p class="text-white/60 text-sm mb-6">selon le nombre de RSS</p>
+        <ul class="space-y-2 text-sm text-white/80 mb-8">
+          <li>✓ Tout le forfait individuel</li>
+          <li>✓ Cas adaptés à votre entreprise</li>
+          <li>✓ Formation en vos locaux</li>
+          <li>✓ Communauté de pratique inter-RSS</li>
+        </ul>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-sm fade-in">
+        <h3 class="font-bold text-xl mb-1">Sur mesure</h3>
+        <p class="text-charcoal/60 text-sm mb-6">Adaptation complète à votre contexte</p>
+        <div class="text-4xl font-extrabold text-charcoal mb-1">Devis</div>
+        <p class="text-charcoal/60 text-sm mb-6">sur demande</p>
+        <ul class="space-y-2 text-sm text-charcoal/70 mb-8">
+          <li>✓ Contenu personnalisé</li>
+          <li>✓ Audit terrain (avant/après)</li>
+          <li>✓ Accompagnement coaching 3 mois</li>
+          <li>✓ Indicateurs SST mesurés</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 p-6 bg-warning/10 border-l-4 border-warning rounded-r-xl max-w-3xl fade-in">
+      <p class="text-charcoal/80"><strong>Bon à savoir :</strong> Formation admissible à plusieurs subventions provinciales (selon les conditions). Nous vous accompagnons dans la demande.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CTA FINAL ============ -->
+<section id="contact" class="py-24 bg-safety text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Et si la prochaine vie sauvée était la vôtre ?</h2>
+    <p class="text-xl text-white/90 mb-10 leading-relaxed">Réservez 30 minutes avec notre équipe pour évaluer comment Agence X peut s'intégrer à votre démarche SST.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:contact@agence-x.qc.ca" class="bg-white text-safety hover:bg-cream px-8 py-4 rounded-md font-semibold transition shadow-lg">Demander un devis</a>
+      <a href="tel:+15812229999" class="border-2 border-white hover:bg-white/10 text-white px-8 py-4 rounded-md font-semibold transition">1 581 222-9999</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-charcoal text-white/60 py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="text-white font-bold"><span class="text-safety">●</span> Agence X</p>
+        <p class="text-sm">Formation en communication pour RSS · Québec</p>
+      </div>
+      <div class="text-sm">© 2026 Agence X. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Active l'animation seulement si JS dispo (sinon fallback : tout visible)
+  document.documentElement.classList.add('js');
+  // Animation au scroll : sections apparaissent en fondu
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
